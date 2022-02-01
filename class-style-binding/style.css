@@ -1,0 +1,35 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.box {
+  height: 200px;
+  padding: 20px;
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.border {
+  border: 2px dashed black;
+}

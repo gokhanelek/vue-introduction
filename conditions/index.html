@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditions</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app" class="m-4">
+      <button
+        class="btn btn-sm btn-primary"
+        @click="showContainer = !showContainer"
+      >
+        Göster
+      </button>
+      <h1 v-if="!showContainer">İlk başta gözükecek</h1>
+      <h1 v-else="showContainer">Sonra gözükecek</h1>
+      <hr />
+      <h2 :class="counterBoxClass">{{counter}}</h2>
+      <button class="btn btn-sm btn-success" @click="counter++">Artır</button>
+      <button class="btn btn-sm btn-danger" @click="counter--">Azalt</button>
+      <!-- TODO v-if directive direk dom ekleyip dom kaldırıyor-->
+      <p v-if="counter < 0">Counter negatif</p>
+      <p v-else-if="counter > 0">Counter pozitif</p>
+      <p v-else>Counter 0</p>
+      <hr />
+      <!-- TODO v-show style birlikte element ekleniyor. Display ile ekrandan gösteriyor-->
+      <p v-show="counter < 0">Counter negatif</p>
+      <p v-show="counter > 0">Counter pozitif</p>
+      <p v-show="counter === 0">Counter 0</p>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
